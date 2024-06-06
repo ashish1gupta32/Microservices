@@ -1,0 +1,50 @@
+server:
+  port: 9080
+
+spring:
+  application:
+    name: RatingService
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/microservice
+    username: root
+    password: root1234
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+
+
+#circuit breaker configuration
+
+#management:
+#  health:
+#    circuitbreakers:
+#      enabled: true
+#  endpoints:
+#    web:
+#      exposure:
+#        include: health
+#  endpoint:
+#    health:
+#      show-details: always
+#
+#resilience4j:
+#  circuitbreaker:
+#    instances:
+#      getAllUserCircuitBreaker:
+#        registerHealthIndicator: true
+#        eventConsumerBufferSize: 10
+#        failureRateThreshold: 50
+#        minimumNumberOfCalls: 2
+#        #        automaticTransitionFromOpenToHalfOpenEnabled: true
+#        #        waitDurationInOpenState: 6s
+#        permittedNumberOfCallsInHalfOpenState: 3
+#        slidingWindowSize: 10
+#        slidingWindowType: COUNT_BASED
+
+
+
